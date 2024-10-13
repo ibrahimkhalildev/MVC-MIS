@@ -16,88 +16,25 @@
 <br />
 
 
-<div class="row">
-    <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
+<div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h5 class="card-title">Info card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
-    <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        @{
-            string data = "        <div class=\"card\" style=\"width: 18rem;\">\r\n            <div class=\"card-body\">\r\n                <h5 class=\"card-title\">Card title</h5>\r\n                <h6 class=\"card-subtitle mb-2 text-muted\">Card subtitle</h6>\r\n                <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\r\n                <a href=\"#\" class=\"card-link\">Card link</a>\r\n                <a href=\"#\" class=\"card-link\">Another link</a>\r\n            </div>\r\n        </div>";
-
-            for (int i = 0; i <= 8; i++)
-            {
-                data = data + "        <div class=\"card\" style=\"width: 18rem;\">\r\n            <div class=\"card-body\">\r\n                <h5 class=\"card-title\">Card title</h5>\r\n                <h6 class=\"card-subtitle mb-2 text-muted\">Card subtitle</h6>\r\n                <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\r\n                <a href=\"#\" class=\"card-link\">Card link</a>\r\n                <a href=\"#\" class=\"card-link\">Another link</a>\r\n            </div>\r\n        </div>";
-
-            }
-        }
-    </div>
-
-
 </div>
 
-<div>
+    @{
+        string data = "<div class=\"col-4\">\r\n        <div class=\"card text-dark bg-info mb-3\" style=\"max-width: 18rem;\">\r\n            <div class=\"card-header\">Header</div>\r\n            <div class=\"card-body\">\r\n                <h5 class=\"card-title\">Info card title</h5>\r\n                <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\r\n            </div>\r\n        </div>\r\n    </div>";
+
+        for (int i = 0; i <= 10; i++)
+        {
+            data = data + "    <div class=\"col-4\">\r\n        <div class=\"card text-dark bg-info mb-3\" style=\"max-width: 18rem;\">\r\n            <div class=\"card-header\">Header</div>\r\n            <div class=\"card-body\">\r\n                <h5 class=\"card-title\">Info card title</h5>\r\n                <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\r\n            </div>\r\n        </div>\r\n    </div>";
+      
+        }
+    }
+</div>
+
+<div class="row">
     @Html.Raw(data)
 </div>
