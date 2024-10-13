@@ -19,6 +19,8 @@ namespace MVC_MIS.Controllers
             BaseEmployee obj = new BaseEmployee();
             obj.EmployeeName = "Ibrahim khalil";
             obj.EmployeeCode = "EMP 001";
+
+            ViewBag.Employee = obj;
             return View(obj);
         }
         [HttpPost]

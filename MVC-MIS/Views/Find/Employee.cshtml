@@ -1,4 +1,5 @@
-﻿@model MVC_MIS.Models.BaseEmployee
+﻿@using MVC_MIS.Models;
+@model MVC_MIS.Models.BaseEmployee
 
 @{
     Layout = "~/Views/Shared/_FindLayout.cshtml";
@@ -16,20 +17,20 @@
 
 <div class="row">
     @{
-            string[] strings = { "C#", "CSS", "HTML5", "SQL", "React", "jQuery", "JavaScript" };
+        string[] strings = { "C#", "CSS", "HTML5", "SQL", "React", "jQuery", "JavaScript" };
 
-            //Array lis way 
-            System.Collections.ArrayList arrayList = new System.Collections.ArrayList();
-            arrayList.Add("C++");
-            arrayList.Add("Js");
-            arrayList.Add("CSS");
-            arrayList.Add("HTML5");
+        //Array lis way
+        System.Collections.ArrayList arrayList = new System.Collections.ArrayList();
+        arrayList.Add("C++");
+        arrayList.Add("Js");
+        arrayList.Add("CSS");
+        arrayList.Add("HTML5");
 
-            //dictonary way 
-            KeyValuePair<string, string> key_Value_Pair = new KeyValuePair<string, string>();
+        //dictonary way
+        KeyValuePair<string, string> key_Value_Pair = new KeyValuePair<string, string>();
 
-            foreach (string skill in strings)
-            {
+        foreach (string skill in strings)
+        {
             <div class="col">
                 <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
                     <div class="card-header">Skills</div>
@@ -44,7 +45,7 @@
 </div>
 
 <div class="row">
-    @{ 
+    @{
         string Day = "Sunday";
         string Output = "";
 
@@ -60,6 +61,19 @@
                 Output = "This is Friday!";
                 break;
         }
-        }
+    }
     <h3>@Output</h3>
+
+    @*//View Data concept. It is comming from Controller*@
+    <p>View Data concept. It is comming from Controller</p>
+
+    @{
+        if (ViewBag.Employee != null)
+        {
+            BaseEmployee obj = (BaseEmployee)ViewBag.Employee;
+            <h5>@obj.EmployeeName</h5>
+            <h5>@obj.EmployeeCode</h5>
+        }
+    }
+
 </div>

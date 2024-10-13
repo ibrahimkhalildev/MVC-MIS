@@ -9,5 +9,12 @@ namespace MVC_MIS.Models
     {
         public string EmployeeName {  get; set; }
         public string EmployeeCode { get; set; }
+
+        public List<BaseEmployee> LstEmployee { get; set; } 
+        
+        public BaseEmployee() 
+        {
+            LstEmployee = new List<BaseEmployee>();
+        }
     }
 }
