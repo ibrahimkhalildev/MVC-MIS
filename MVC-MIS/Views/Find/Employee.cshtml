@@ -16,9 +16,20 @@
 
 <div class="row">
     @{
-        string[] strings = { "C#", "CSS", "HTML5", "SQL", "React", "jQuery", "JavaScript" };
-        foreach (string skill in strings)
-        {
+            string[] strings = { "C#", "CSS", "HTML5", "SQL", "React", "jQuery", "JavaScript" };
+
+            //Array lis way 
+            System.Collections.ArrayList arrayList = new System.Collections.ArrayList();
+            arrayList.Add("C++");
+            arrayList.Add("Js");
+            arrayList.Add("CSS");
+            arrayList.Add("HTML5");
+
+            //dictonary way 
+            KeyValuePair<string, string> key_Value_Pair = new KeyValuePair<string, string>();
+
+            foreach (string skill in strings)
+            {
             <div class="col">
                 <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
                     <div class="card-header">Skills</div>
@@ -30,4 +41,25 @@
             </div>
         }
     }
+</div>
+
+<div class="row">
+    @{ 
+        string Day = "Sunday";
+        string Output = "";
+
+        switch (Day)
+        {
+            case "Sunday":
+                Output = "This is Sunday";
+                break;
+            case "Monday":
+                Output = "This is Monday";
+                break;
+            default:
+                Output = "This is Friday!";
+                break;
+        }
+        }
+    <h3>@Output</h3>
 </div>
