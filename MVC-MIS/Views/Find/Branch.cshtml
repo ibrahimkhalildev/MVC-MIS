@@ -1,0 +1,29 @@
+﻿
+@using MVC_MIS.Models;
+
+@{
+    Layout = "~/Views/Shared/_FindLayout.cshtml";
+}
+
+@*Why it is not working?*@
+@*@{
+        List<MVC_MIS.Models.Branch>
+    }*@
+
+@{
+    List<Branch> lst = Branch.GetBranch();
+
+    foreach (Branch branch in lst)
+    {
+        if (branch.BranchName == "Khulna")
+        {
+            <h3>@branch.BranchName</h3>
+            <br />
+        }
+    }
+    string ProjectName = "SSSWRDP";
+}
+
+
+<h5>@ProjectName</h5>
+<h5>@(5*8)</h5>
