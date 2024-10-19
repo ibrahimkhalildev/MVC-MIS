@@ -17,7 +17,6 @@
 
 <div class="">
     @{
-        string[] strings = { "C#", "CSS", "HTML5", "SQL", "React", "jQuery", "JavaScript" };
 
         //Array lis way
         System.Collections.ArrayList arrayList = new System.Collections.ArrayList();
@@ -29,10 +28,12 @@
         //dictonary way
         KeyValuePair<string, string> key_Value_Pair = new KeyValuePair<string, string>();
 
-        foreach (string skill in strings)
-        {
-            <div class="row">
-                <div class="col">
+        string[] strings = { "C#", "CSS", "HTML5", "SQL", "React", "jQuery", "JavaScript", "React", "Angular", "Vanila JS", "Cake Js", "Animate.CSS" };
+
+        <div class="row">
+            @foreach (string skill in arrayList)
+            {
+                <div class="col-4">
                     <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
                         <div class="card-header">Skills</div>
                         <div class="card-body">
@@ -41,10 +42,13 @@
                         </div>
                     </div>
                 </div>
-           </div>
-        }
+            }
+        </div>
+
     }
 </div>
+
+
 
 <div class="row">
     @{

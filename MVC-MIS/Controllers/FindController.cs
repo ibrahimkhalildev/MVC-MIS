@@ -45,5 +45,10 @@ namespace MVC_MIS.Controllers
             obj.EmployeeCode = "EMP 002";
             return View(obj);
         }
+
+        public ActionResult Student() { 
+        
+            return View();
+        }
     }
 }

@@ -127,6 +127,7 @@
     </Compile>
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\BaseEmployee.cs" />
+    <Compile Include="Models\Teacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -184,6 +185,8 @@
     <Content Include="Views\Find\Employee.cshtml" />
     <Content Include="Views\Find\Customer.cshtml" />
     <Content Include="Views\Shared\_FindLayout.cshtml" />
+    <Content Include="Views\Find\Student.cshtml" />
+    <Content Include="Views\Find\_PartialStudent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
