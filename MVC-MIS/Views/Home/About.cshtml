@@ -6,4 +6,23 @@
     <h3>@ViewBag.Message</h3>
 
     <p>Use this area to provide additional information.</p>
+
+    @using (Html.BeginForm("About", "Home", FormMethod.Post))
+    {
+            <input type="text" name="txtName" placeholder="Name" />
+            <input type="text" name="txtAge" placeholder="Age" />
+            <input type="text" name="txtEducation" placeholder="Education" />
+            <input type="text" name="txtHobby"placeholder="Hobby" />
+            <select name="ddlSelect">
+                <option value="1">Dhaka</option>
+                <option value="2">Khulna</option>
+                <option value="3">Satkhira</option>
+                <option value="4">Chattogram</option>
+            </select>
+
+            <input type="submit" value="Save" name="btnSubmit" />
+            
+            @*<button type="submit" class="btn btn-primary">Submit</button>*@
+    }
+
 </main>

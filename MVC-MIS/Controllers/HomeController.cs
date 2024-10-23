@@ -15,7 +15,21 @@ namespace MVC_MIS.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "My Fresh Load";
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult About(string btnSubmit, FormCollection formCollection)
+        {
+            string txtName = formCollection["txtName"].ToString();
+            string txtAge = formCollection["txtAge"].ToString();
+            string txtEducation = formCollection["txtEducation"].ToString();
+            string txtHobby = formCollection["txtHobby"].ToString();
+            string ddlSelect = formCollection["ddlSelect"].ToString();
+
+            ViewBag.Message = "This is Postback Load.";
 
             return View();
         }
