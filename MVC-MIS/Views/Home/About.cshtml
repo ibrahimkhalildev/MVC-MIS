@@ -7,22 +7,46 @@
 
     <p>Use this area to provide additional information.</p>
 
-    @using (Html.BeginForm("About", "Home", FormMethod.Post))
-    {
-            <input type="text" name="txtName" placeholder="Name" />
-            <input type="text" name="txtAge" placeholder="Age" />
-            <input type="text" name="txtEducation" placeholder="Education" />
-            <input type="text" name="txtHobby"placeholder="Hobby" />
-            <select name="ddlSelect">
-                <option value="1">Dhaka</option>
-                <option value="2">Khulna</option>
-                <option value="3">Satkhira</option>
-                <option value="4">Chattogram</option>
-            </select>
+    <div class="container">
 
-            <input type="submit" value="Save" name="btnSubmit" />
-            
-            @*<button type="submit" class="btn btn-primary">Submit</button>*@
-    }
+        <div class="col-md-4">
+
+            @using (Html.BeginForm("About", "Home", FormMethod.Post))
+            {
+                <input type="hidden" name="hdTotalRow" value="5"/>
+                for (int i = 0; i < 3; i++)
+                {
+                    <label for="Name" class="form-label">Name: </label>
+                    <input type="text" name="txtName_@i" placeholder="Name" class="form-control" id="Name" />
+
+                    <label for="Age" class="form-label">Age: </label>
+                    <input type="text" name="txtAge_@i" placeholder="Age" class="form-control" id="Age" />
+
+                    <label for="Education" class="form-label">Education: </label>
+                    <input type="text" name="txtEducation_@i" placeholder="Education" class="form-control" id="Education" />
+
+                    <label for="Hobby" class="form-label">Hobby</label>
+                    <input type="text" name="txtHobby_@i" placeholder="Hobby" class="form-control" id="Hobby" />
+
+                    <label for="District" class="form-label"> Select District </label>
+                    <select name="ddlSelect_@i" id="District" class="form-control">
+                        <option value="1">Dhaka</option>
+                        <option value="2">Khulna</option>
+                        <option value="3">Satkhira</option>
+                        <option value="4">Chattogram</option>
+                    </select>
+                    <input type="checkbox" name="chk_@i" class="form-check-input" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">Agree with term & Condition</label>
+
+                }
+
+                <br />
+                <input type="submit" value="Save" class="btn btn-primary mt-2" name="btnSubmit" />
+
+                @*<button type="submit" class="btn btn-primary">Submit</button>*@
+            }
+        </div>
+
+    </div>
 
 </main>
