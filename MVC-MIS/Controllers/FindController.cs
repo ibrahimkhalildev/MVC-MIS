@@ -19,6 +19,8 @@ namespace MVC_MIS.Controllers
             BaseEmployee obj = new BaseEmployee();
             obj.EmployeeName = "Ibrahim khalil";
             obj.EmployeeCode = "EMP 001";
+
+            ViewBag.Employee = obj;
             return View(obj);
         }
         [HttpPost]
@@ -42,6 +44,11 @@ namespace MVC_MIS.Controllers
             obj.EmployeeName = "Abdul Jalil";
             obj.EmployeeCode = "EMP 002";
             return View(obj);
+        }
+
+        public ActionResult Student() { 
+        
+            return View();
         }
     }
 }

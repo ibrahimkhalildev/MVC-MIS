@@ -1,28 +1,50 @@
-﻿
+﻿@model MVC_MIS.Models.BaseEmployee
+
+@*It is working*@
 @using MVC_MIS.Models;
 
 @{
     Layout = "~/Views/Shared/_FindLayout.cshtml";
 }
 
-@*Why it is not working?*@
+@*But why it is not working?*@
 @*@{
-        List<MVC_MIS.Models.Branch>
-    }*@
+    List<MVC_MIS.Models.Branch>
+}*@
 
 @{
-    List<Branch> lst = Branch.GetBranch();
+    <h3>Brach List</h3>
+    List<Branch> lst = Branch.GetBranches();
+
 
     foreach (Branch branch in lst)
     {
-        if (branch.BranchName == "Khulna")
-        {
-            <h3>@branch.BranchName</h3>
-            <br />
-        }
+
+        <p>@branch.BranchName</p>
+        <p>@branch.BranchCode</p>
+        <p>@branch.Location</p>
+        <p>-----------------</p>
+
     }
     string ProjectName = "SSSWRDP";
 }
+@{
+    <h2>Teacher List</h2>
+    List<Teacher> teache = Teacher.GetTeacher();
+    foreach (Teacher teacher in teache)
+    {
+        <p>@teacher.TeacherName.</p>
+        <p>@teacher.CouseName.</p>
+        <p>@teacher.CourseId</p>
+        <br />
+
+    }
+}
+
+
+
+@Html.TextBoxFor(m => m.EmployeeName)
+@Html.TextBoxFor(m => m.EmployeeCode)
 
 
 <h5>@ProjectName</h5>
