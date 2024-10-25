@@ -7,38 +7,59 @@
 
     <p>Use this area to provide additional information.</p>
 
+    @{
+        string txtName = "";
+        string txtAge = "";
+        //if (ViewBag.formCollection != null)
+        if(Model != null)
+        {
+            //FormCollection formCollection = (FormCollection)ViewBag.formCollection;
+            FormCollection formCollection = (FormCollection)Model;
+
+            txtName = formCollection["txtName"].ToString();
+            txtAge = formCollection["txtAge"].ToString();
+        }
+    }
+
     <div class="container">
 
         <div class="col-md-4">
 
             @using (Html.BeginForm("About", "Home", FormMethod.Post))
             {
-                <input type="hidden" name="hdTotalRow" value="5"/>
-                for (int i = 0; i < 3; i++)
-                {
-                    <label for="Name" class="form-label">Name: </label>
-                    <input type="text" name="txtName_@i" placeholder="Name" class="form-control" id="Name" />
 
-                    <label for="Age" class="form-label">Age: </label>
-                    <input type="text" name="txtAge_@i" placeholder="Age" class="form-control" id="Age" />
+                <label for="Name" class="form-label">Name: </label>
+                <input type="text" name="txtName" placeholder="Name" class="form-control" id="Name" value="@txtName"/>
 
-                    <label for="Education" class="form-label">Education: </label>
-                    <input type="text" name="txtEducation_@i" placeholder="Education" class="form-control" id="Education" />
+                <label for="Age" class="form-label">Age: </label>
+                <input type="text" name="txtAge" placeholder="Age" class="form-control" id="Age" value="@txtAge"/>
 
-                    <label for="Hobby" class="form-label">Hobby</label>
-                    <input type="text" name="txtHobby_@i" placeholder="Hobby" class="form-control" id="Hobby" />
+                @*<input type="hidden" name="hdTotalRow" value="5"/>
+                    for (int i = 0; i < 3; i++)
+                    {
+                        <label for="Name" class="form-label">Name: </label>
+                        <input type="text" name="txtName_@i" placeholder="Name" class="form-control" id="Name" />
 
-                    <label for="District" class="form-label"> Select District </label>
-                    <select name="ddlSelect_@i" id="District" class="form-control">
-                        <option value="1">Dhaka</option>
-                        <option value="2">Khulna</option>
-                        <option value="3">Satkhira</option>
-                        <option value="4">Chattogram</option>
-                    </select>
-                    <input type="checkbox" name="chk_@i" class="form-check-input" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">Agree with term & Condition</label>
+                        <label for="Age" class="form-label">Age: </label>
+                        <input type="text" name="txtAge_@i" placeholder="Age" class="form-control" id="Age" />
 
-                }
+                        <label for="Education" class="form-label">Education: </label>
+                        <input type="text" name="txtEducation_@i" placeholder="Education" class="form-control" id="Education" />
+
+                        <label for="Hobby" class="form-label">Hobby</label>
+                        <input type="text" name="txtHobby_@i" placeholder="Hobby" class="form-control" id="Hobby" />
+
+                        <label for="District" class="form-label"> Select District </label>
+                        <select name="ddlSelect_@i" id="District" class="form-control">
+                            <option value="1">Dhaka</option>
+                            <option value="2">Khulna</option>
+                            <option value="3">Satkhira</option>
+                            <option value="4">Chattogram</option>
+                        </select>
+                        <input type="checkbox" name="chk_@i" class="form-check-input" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">Agree with term & Condition</label>
+
+                    }*@
 
                 <br />
                 <input type="submit" value="Save" class="btn btn-primary mt-2" name="btnSubmit" />
