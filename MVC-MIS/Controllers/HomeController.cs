@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC_MIS.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,9 +13,45 @@ namespace MVC_MIS.Controllers
         {
             return View();
         }
-        public JsonResult GenName()
+        public JsonResult GetMobileCollection()
         {
-            return Json("Ibrahim Khalil", JsonRequestBehavior.AllowGet);
+            Human human = new Human();
+            human.Name = "Ibrahim Khalil";
+            human.Age = 31;
+
+            Mobile obj = new Mobile();
+            obj.Name = "iPhone";
+            human.List_Mobile.Add(obj);
+
+            obj = new Mobile();
+            obj.Name = "Samsung";
+            human.List_Mobile.Add(obj);
+
+            return Json(human, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetHumanCollection()
+        {
+            List<Human> lsthuman = new List<Human>();
+
+            Human human = new Human();
+            human.Name = "Ibrahim Khalil";
+            human.Age = 31;
+            lsthuman.Add(human);
+
+            human = new Human();
+            human.Name = "Rihan Jamil";
+            human.Age = 55;
+            lsthuman.Add(human);
+
+            var data = (from p in lsthuman
+                        select new
+                        {
+                            p.Name,
+                            p.Age,
+                        }).ToList();
+
+            return Json(data, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult About()
@@ -44,11 +81,17 @@ namespace MVC_MIS.Controllers
             //    }
 
             //}
-
+            string name = formCollection["txtName"].ToString();
+            if(name == "abc")
+            {
+               //return RedirectToAction("Contact", "Home");
+               return Redirect("google.com");
+            }
             //this is fast way
             //ViewBag.formCollection = formCollection;
             //this is another way.
-            return View(formCollection);
+            //return View(formCollection);
+            return View();
         }
 
         public ActionResult Contact()
@@ -56,6 +99,12 @@ namespace MVC_MIS.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult Logout()
+        {
+            //analysis part
+            return RedirectToAction("Index");
         }
     }
 }

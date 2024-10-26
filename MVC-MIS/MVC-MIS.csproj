@@ -127,6 +127,7 @@
     </Compile>
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\BaseEmployee.cs" />
+    <Compile Include="Models\Human.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
