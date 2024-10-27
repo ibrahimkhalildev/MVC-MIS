@@ -20,6 +20,12 @@
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>
+                        @using (Html.BeginForm("Logout", "Home"))
+                        {
+                            <input type="submit" value="Logout" class = "nav-link" name="logout"/>
+                        }
+                    </li>
                 </ul>
             </div>
         </div>

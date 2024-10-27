@@ -10,7 +10,7 @@ namespace MVC_MIS.Controllers
     public class HomeController : Controller
     {
         public ActionResult Index()
-        {
+         {
             return View();
         }
         public JsonResult GetMobileCollection()
