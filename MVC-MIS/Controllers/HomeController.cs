@@ -53,6 +53,42 @@ namespace MVC_MIS.Controllers
 
             return Json(data, JsonRequestBehavior.AllowGet);
         }
+        public ActionResult FormSubmit()
+        {
+            ViewBag.Message = "My Form Before Load";
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult FormSubmit(string btnSubmit, FormCollection formCollection)
+        {
+            int hdTotalRow = Convert.ToInt32(formCollection["hdTotalRow"].ToString());
+            for(int i = 0; i< hdTotalRow; i++)
+            {
+                if (formCollection["chk_Box_"+i.ToString()] != null)
+                {
+                    if (formCollection["chk_Box_" + i.ToString()].ToString().ToLower() == "on")
+                    {
+                        string name = formCollection["txtName_" + i.ToString()].ToString();
+                        string age = formCollection["txtAge_" + i.ToString()].ToString();
+                        string education = formCollection["txtEducation_" + i.ToString()].ToString();
+                        string hobby = formCollection["txtHobby_" + i.ToString()].ToString(); ;
+                        string selectOption = formCollection["ddlSelect_" + i.ToString()].ToString();
+                    }
+                }
+            }
+
+            ViewBag.Message = "My Form after Submission";
+
+            return View();
+        }
+        public ActionResult ModelBinding()
+        {
+            ViewBag.Message = "Model Binding Method";
+
+            return View();
+        }
 
         public ActionResult About()
         {

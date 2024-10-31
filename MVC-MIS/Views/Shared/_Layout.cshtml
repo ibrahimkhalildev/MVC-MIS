@@ -18,12 +18,14 @@
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("From Submit", "FormSubmit", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Model Binding", "Employee", "Find", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>
                         @using (Html.BeginForm("Logout", "Home"))
                         {
-                            <input type="submit" value="Logout" class = "nav-link" name="logout"/>
+                            <input type="submit" value="Logout" class="nav-link btn btn-primary" name="logout" />
                         }
                     </li>
                 </ul>

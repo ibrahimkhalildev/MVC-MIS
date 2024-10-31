@@ -188,6 +188,8 @@
     <Content Include="Views\Shared\_FindLayout.cshtml" />
     <Content Include="Views\Find\Student.cshtml" />
     <Content Include="Views\Find\_PartialStudent.cshtml" />
+    <Content Include="Views\Home\FormSubmit.cshtml" />
+    <Content Include="Views\Home\ModelBinding.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

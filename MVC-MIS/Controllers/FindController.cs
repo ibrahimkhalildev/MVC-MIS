@@ -27,8 +27,8 @@ namespace MVC_MIS.Controllers
         public ActionResult Employee(BaseEmployee model)
         {
             ModelState.Clear();
-            model.EmployeeName = "Ibrahim Khalil65";
-            model.EmployeeCode = "EMP 003";
+            model.EmployeeName = "Model Binding System";
+            model.EmployeeCode = "EMP 593";
             return View(model);
 
             //ModelState.Clear();
