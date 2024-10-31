@@ -1,11 +1,11 @@
-﻿
+﻿@using MVC_MIS.Models;
 @model MVC_MIS.Models.BaseEmployee
 
 @{
     Layout = "~/Views/Shared/_FindLayout.cshtml";
 }
 <br />
-<form action="@Url.Action("Employee","Find")" method="post">
+<form action="@Url.Action("Employee", "Find")" method="post">
 
     @Html.TextBoxFor(m => m.EmployeeName)
     @Html.TextBoxFor(m => m.EmployeeCode)
@@ -15,86 +15,72 @@
 
 <br />
 
-
-<div class="row">
-    <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-    </div>
-
+<div class="">
     @{
-        string data = "<div class=\"col-4\">\r\n        <div class=\"card text-dark bg-info mb-3\" style=\"max-width: 18rem;\">\r\n            <div class=\"card-header\">Header</div>\r\n            <div class=\"card-body\">\r\n                <h5 class=\"card-title\">Info card title</h5>\r\n                <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\r\n            </div>\r\n        </div>\r\n    </div>";
 
-        for (int i = 0; i <= 10; i++)
-        {
-            data = data + "    <div class=\"col-4\">\r\n        <div class=\"card text-dark bg-info mb-3\" style=\"max-width: 18rem;\">\r\n            <div class=\"card-header\">Header</div>\r\n            <div class=\"card-body\">\r\n                <h5 class=\"card-title\">Info card title</h5>\r\n                <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\r\n            </div>\r\n        </div>\r\n    </div>";
-      
-        }
+
+        //Array lis way
+        System.Collections.ArrayList arrayList = new System.Collections.ArrayList();
+        arrayList.Add("C++");
+        arrayList.Add("Js");
+        arrayList.Add("CSS");
+        arrayList.Add("HTML5");
+
+        //dictonary way
+        KeyValuePair<string, string> key_Value_Pair = new KeyValuePair<string, string>();
+
+        string[] strings = { "C#", "CSS", "HTML5", "SQL", "React", "jQuery", "JavaScript", "React", "Angular", "Vanila JS", "Cake Js", "Animate.CSS" };
+
+        <div class="row">
+            @foreach (string skill in arrayList)
+            {
+                <div class="col-4">
+                    <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Skills</div>
+                        <div class="card-body">
+                            <h5 class="card-title">@skill</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
     }
 </div>
 
+
+
 <div class="row">
-    @Html.Raw(data)
+    @{
+        string Day = "Sunday";
+        string Output = "";
+
+        switch (Day)
+        {
+            case "Sunday":
+                Output = "This is Sunday";
+                break;
+            case "Monday":
+                Output = "This is Monday";
+                break;
+            default:
+                Output = "This is Friday!";
+                break;
+        }
+    }
+    <h3>@Output</h3>
+
+    @*//View Data concept. It is comming from Controller*@
+    <p>View Data concept. It is comming from Controller</p>
+
+    @{
+        if (ViewBag.Employee != null)
+        {
+            BaseEmployee obj = (BaseEmployee)ViewBag.Employee;
+            <h5>@obj.EmployeeName</h5>
+            <h5>@obj.EmployeeCode</h5>
+        }
+    }
+
 </div>
