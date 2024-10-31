@@ -19,14 +19,16 @@ namespace MVC_MIS.Controllers
             BaseEmployee obj = new BaseEmployee();
             obj.EmployeeName = "Ibrahim khalil";
             obj.EmployeeCode = "EMP 001";
+
+            ViewBag.Employee = obj;
             return View(obj);
         }
         [HttpPost]
         public ActionResult Employee(BaseEmployee model)
         {
             ModelState.Clear();
-            model.EmployeeName = "Ibrahim Khalil65";
-            model.EmployeeCode = "EMP 003";
+            model.EmployeeName = "Model Binding System";
+            model.EmployeeCode = "EMP 593";
             return View(model);
 
             //ModelState.Clear();
@@ -42,6 +44,11 @@ namespace MVC_MIS.Controllers
             obj.EmployeeName = "Abdul Jalil";
             obj.EmployeeCode = "EMP 002";
             return View(obj);
+        }
+
+        public ActionResult Student() { 
+        
+            return View();
         }
     }
 }
